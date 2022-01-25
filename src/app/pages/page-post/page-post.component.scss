@@ -1,0 +1,16 @@
+.comments{
+    margin-top: 20px;
+    h3 {
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+    .comment-form {
+    
+        > *{
+            display: block;
+        }
+        .buttons{
+           text-align: right;
+        }
+       }
+}

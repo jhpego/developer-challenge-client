@@ -1,0 +1,17 @@
+.menu-item{
+    display: inline-block;
+    padding: 20px;
+    a {
+        outline: none;
+    }
+    .nav-item {
+        color: gray;
+        font-size: 2em;
+        text-decoration: none;
+        &.navActive {
+            color: #00b1c2;
+            border-bottom: 3px solid #00b1c2;
+            padding-bottom: 5px;
+        }
+    }
+}

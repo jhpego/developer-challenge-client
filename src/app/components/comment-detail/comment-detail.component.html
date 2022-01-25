@@ -1,0 +1,8 @@
+<div class="comment-detail">
+    <div class="heading">
+        {{ (comment?.date | date : "yyyy-MM-dd HH:mm") + " | " + comment.user }}
+    </div>
+    <div class="comment">
+        {{ comment.content }}
+    </div>
+</div>

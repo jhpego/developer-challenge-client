@@ -1,0 +1,11 @@
+<!-- <span matBadgeSize="small" matBadge="{{ row.count}}" matBadgeOverlap="false">{{ row.label }}</span> -->
+<div class="dashbox-row">
+<div class="title">
+    <a *ngIf="row.url" routerLink="{{row.url}}" routerLinkActive="active" >{{ row.label }}</a>
+    <span *ngIf="!row.url">{{ row.label }}</span>
+</div>
+<div class="subtitle">{{ row.subLabel }}</div>
+</div>
+<!-- <span>{{ row.label }}<mat-chip-list aria-label="counter"><mat-chip>{{ row.count }}</mat-chip></mat-chip-list></span> -->
+
+<!-- <a  >{{ post?.title }}</a> -->

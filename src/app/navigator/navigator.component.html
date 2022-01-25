@@ -1,0 +1,13 @@
+<nav>
+    <li *ngFor="let currNav of menu" class="menu-item">
+      
+      <a class="nav-item" routerLink="{{ currNav.url }}" routerLinkActive="navActive">
+        <fa-icon [icon]="currNav.icon"></fa-icon>
+        {{ currNav.label }}
+      </a>
+    </li>
+
+
+
+
+  </nav>

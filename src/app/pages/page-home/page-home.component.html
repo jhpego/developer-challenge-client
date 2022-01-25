@@ -1,0 +1,40 @@
+<div class="page-home grid-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Recent Posts</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let currPost of postsRecent">
+                    <dashbox-row [row]="currPost"></dashbox-row>
+                </li>
+            </ul>
+        </mat-card-content>
+
+
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Popular Posts</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let currPost of postsPopular">
+                    <dashbox-row [row]="currPost"></dashbox-row>
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Popular Users</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ul>
+                <li *ngFor="let currPost of usersPopular">
+                    <dashbox-row [row]="currPost"></dashbox-row>
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>

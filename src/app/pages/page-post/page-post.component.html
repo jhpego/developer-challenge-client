@@ -1,0 +1,33 @@
+<post-detail [post]="post"></post-detail>
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li *ngFor="let currComment of comments">
+      <!-- <post-row [post]="item"></post-row> -->
+      <!-- {{currComment.content }} -->
+      <comment-detail [comment]="currComment"></comment-detail>
+    </li>
+  </ul>
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata)" class="comment-form">
+
+    <mat-form-field  appearance="fill" style="width: 100%;">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="" name="message" formControlName="message" (focus)="markTouched()"></textarea>
+      <!-- <mat-error *ngIf="formdata.get('message').hasError('required')" >
+        Comment 
+      </mat-error> -->
+      <mat-error *ngIf="formdata.get('message').hasError('pattern')">
+        Invalid Comment!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <input type="message" name="message" formControlName="message" /> -->
+    <div class="buttons">
+      <button mat-raised-button color="primary" [disabled]="!formdata.valid" >Submit</button>
+    </div>
+      
+
+    <!-- <button>Submit</button> -->
+  </form>
+
+</div>

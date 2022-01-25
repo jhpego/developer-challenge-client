@@ -1,0 +1,15 @@
+<mat-card class="post-detail">
+    <div class="publish_date">{{post?.publish_date}}</div>
+    <mat-card-title><a routerLink="/post/{{post?.id}}" routerLinkActive="active" >{{ post?.title }}</a></mat-card-title>
+    <mat-card-subtitle>{{ post?.author }}</mat-card-subtitle>
+    <mat-card-content >
+        <p class="description">{{ post?.description }}</p>
+        <p [innerHTML]="post?.content"></p>
+
+        <!-- <div [innerHTML]="comment"></div> -->
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+  </mat-card>

@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let currPost of posts; let i = index">
+        <post-row [post]="currPost" [hideContent]="i>2"></post-row>
+    </li>
+</ul>
