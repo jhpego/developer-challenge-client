@@ -1,6 +1,7 @@
 {
-  "name": "developer-challenge-client",
-  "version": "0.0.0",
+  "name": "letsgetchecked-challenge",
+  "version": "0.0.1",
+  "author": "Jorge Pego",
   "scripts": {
     "ng": "ng",
     "api": "json-server --watch api/db.json --port 9000",

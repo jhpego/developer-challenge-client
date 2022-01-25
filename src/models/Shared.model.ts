@@ -12,3 +12,8 @@ export type  NavItem = {
     label: string;
     url: string;
 }
+
+export type  GroupCount = {
+    id: string|number;
+    _count: number;
+}

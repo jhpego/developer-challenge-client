@@ -16,14 +16,14 @@
       <!-- <mat-error *ngIf="formdata.get('message').hasError('required')" >
         Comment 
       </mat-error> -->
-      <mat-error *ngIf="formdata.get('message').hasError('pattern')">
+      <mat-error *ngIf="formdata.get('message')?.hasError('pattern')">
         Invalid Comment!
       </mat-error>
     </mat-form-field>
 
     <!-- <input type="message" name="message" formControlName="message" /> -->
     <div class="buttons">
-      <button mat-raised-button color="primary" [disabled]="!formdata.valid" >Submit</button>
+      <button class="submit" mat-raised-button color="primary" [disabled]="!formdata.valid" >Submit</button>
     </div>
       
 

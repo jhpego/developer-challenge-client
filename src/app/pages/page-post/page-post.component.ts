@@ -14,10 +14,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./page-post.component.scss']
 })
 export class PagePostComponent {
-  title = 'PostsPage';
-  formdata: any;
+  formdata: FormGroup;
   @Input() items: Post[] = [];
-  // constructor(private postService: PostsService) {}
 
   private routeSub: Subscription;
   public postId: number;
@@ -34,24 +32,14 @@ export class PagePostComponent {
 
 
   ngOnInit(): void {
-    // this.routeSub = this.route.params.subscribe(params => {
-    //   console.log(params) //log the entire params object
-    //   console.log(params['id']) //log the value of id
-    // });
     combineLatest(this.route.params, this.route.queryParams)
       .pipe(map(results => {
         const output = { ...results[0], ...results[1] };
         return output;
       })).subscribe(params => {
-        // console.log(params) //log the entire params object
-        // console.log(params['id']) //log the value of id
         this.postId = params['id'];
-        console.log(this.postId) //log the value of id
         this.getPost();
         this.getComments();
-
-
-
       })
     this.formdata = new FormGroup({
       message: new FormControl("", [/*Validators.required,*/ Validators.pattern(this.regexPat)]),
@@ -60,8 +48,8 @@ export class PagePostComponent {
   }
 
   markTouched() {
-    this.formdata.get("message").markAsTouched();
-    this.formdata.get("message").updateValueAndValidity();
+    this.formdata?.get("message")?.markAsTouched();
+    this.formdata?.get("message")?.updateValueAndValidity();
   }
 
 
@@ -75,7 +63,6 @@ export class PagePostComponent {
   getComments(): Subscription {
     return this.commentsService.getByPost(this.postId).subscribe(res => {
       this.comments = res;
-      // this.post = res;
     })
   }
 

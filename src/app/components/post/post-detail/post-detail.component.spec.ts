@@ -22,7 +22,7 @@ describe('PostDetailComponent', () => {
     component.post = {
       author: 'Guest',
       content: 'Sample Post',
-      counterComments: 5,
+      _count: 5,
       description: 'description of Sample Post',
       id: 15,
       publish_date: new Date('2022-01-25'),
@@ -32,4 +32,5 @@ describe('PostDetailComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
 });

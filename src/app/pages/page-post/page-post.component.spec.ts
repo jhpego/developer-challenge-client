@@ -1,9 +1,15 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PagePostComponent } from 'src/app/pages/page-post/page-post.component';
 
 describe('PagePostComponent', () => {
+
+  let component: PagePostComponent;
+  let fixture: ComponentFixture<PagePostComponent>;
+
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -14,12 +20,21 @@ describe('PagePostComponent', () => {
         PagePostComponent
       ],
     }).compileComponents();
+    fixture = TestBed.createComponent(PagePostComponent);
+    component = fixture.componentInstance;
   });
 
   it('should create', () => {
-    const fixture = TestBed.createComponent(PagePostComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
+  });
+
+  it("should disable submit button", () => {
+    fixture.detectChanges();
+    component.formdata?.get("message")?.setValue("ce234nas");
+    fixture.detectChanges();
+    const button = fixture.debugElement.query(By.css("button.submit"));
+    expect(button.nativeElement.disabled).toBeTruthy();
   });
 
 });

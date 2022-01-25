@@ -6,5 +6,5 @@ export class Post {
     slug: string;
     description: string;
     content: string;
-    counterComments: number;
+    _count: number;
   }

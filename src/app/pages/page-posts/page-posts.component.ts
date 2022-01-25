@@ -11,7 +11,7 @@ import { PostsService } from 'src/services/posts.service';
 })
 export class PagePostsComponent implements OnInit {
 
-  public posts:any = [];
+  public posts:Post[] = [];
 
   constructor(private postService: PostsService) {}
 
